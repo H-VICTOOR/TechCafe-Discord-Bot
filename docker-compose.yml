@@ -1,0 +1,12 @@
+version: '3.9'
+
+services:
+  techcafebot:
+      build: .
+      container_name: techcafebot
+      restart: always
+      command: sh -c "python3 runner.py"
+      volumes:
+        - ./bot:/app
+      env_file:
+        - ./envs/prod/discord/.env
